@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# banco local de desenvolvimento
+coleta.db
+drenagem.db
+
+# saídas geradas localmente
+Output_Kartado/
+2026-*/
+2025-*/
+
+# backups e rascunhos
+Backup/
+
+# arquivos do sistema
+.DS_Store
+Thumbs.db

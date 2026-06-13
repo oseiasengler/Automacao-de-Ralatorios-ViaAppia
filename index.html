@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1620">
+<link rel="manifest" href="manifest.json">
+<title>Coleta de Campo — Kartado</title>
+<style>
+  :root{
+    --bg:#0f1620; --surface:#18222f; --surface2:#1f2c3c; --line:#2c3c4f;
+    --ink:#eef4fb; --muted:#8aa0b6;
+    --amber:#f5a623; --amber-ink:#1a1205;   /* ação primária (rodovia) */
+    --agua:#2bb6c4;                           /* semântica de drenagem */
+    --ok:#3ecf8e; --warn:#f5a623; --crit:#ff5d5d;
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    -webkit-text-size-adjust:100%; padding-bottom:96px;
+  }
+  /* ---- topo ---- */
+  header{
+    position:sticky; top:0; z-index:10; background:rgba(15,22,32,.92);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    padding:calc(env(safe-area-inset-top) + 10px) 16px 10px;
+    display:flex; align-items:center; gap:10px;
+  }
+  header .mark{
+    width:30px;height:30px;border-radius:8px;flex:none;
+    background:linear-gradient(135deg,var(--amber),var(--agua));
+  }
+  header h1{font-size:16px;margin:0;font-weight:700;letter-spacing:.2px}
+  header h1 small{display:block;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.3px}
+  .net{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--crit)}
+  .dot.on{background:var(--ok)}
+  .badge{background:var(--amber);color:var(--amber-ink);font-weight:700;
+    border-radius:999px;padding:2px 9px;font-size:12px;min-width:22px;text-align:center}
+  .badge.zero{background:var(--surface2);color:var(--muted)}
+
+  /* ---- abas ---- */
+  nav.tabs{display:flex;gap:4px;padding:10px 12px 0;position:sticky;top:54px;z-index:9;
+    background:var(--bg)}
+  nav.tabs button{flex:1;background:none;border:none;color:var(--muted);
+    padding:10px;font-size:14px;font-weight:600;border-radius:10px 10px 0 0;cursor:pointer}
+  nav.tabs button.sel{color:var(--ink);background:var(--surface);border-bottom:2px solid var(--amber)}
+
+  main{padding:14px 12px 0}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    padding:14px;margin-bottom:14px}
+  .card h2{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--agua);
+    margin:0 0 12px}
+
+  label{display:block;font-size:13px;color:var(--muted);margin:0 0 6px;font-weight:600}
+  .field{margin-bottom:13px}
+  input,select,textarea{
+    width:100%;background:var(--surface2);border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:13px;font-size:16px;-webkit-appearance:none;appearance:none}
+  input:focus,select,textarea:focus{outline:2px solid var(--agua);outline-offset:0;border-color:transparent}
+  select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238aa0b6' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+  .row{display:flex;gap:10px}
+  .row>*{flex:1}
+  .hint{font-size:11px;color:var(--muted);margin-top:4px}
+  .req::after{content:" *";color:var(--amber)}
+
+  /* segmented (lado, sentido, estado) */
+  .seg{display:flex;gap:6px;flex-wrap:wrap}
+  .seg button{flex:1;min-width:64px;background:var(--surface2);border:1px solid var(--line);
+    color:var(--muted);border-radius:10px;padding:11px 8px;font-size:13px;font-weight:600;cursor:pointer}
+  .seg button.sel{background:var(--agua);border-color:var(--agua);color:#04181b}
+  .seg.estado button[data-v=bom].sel{background:var(--ok);border-color:var(--ok);color:#042}
+  .seg.estado button[data-v=regular].sel{background:#7bd0d8;border-color:#7bd0d8;color:#042}
+  .seg.estado button[data-v=ruim].sel{background:var(--warn);border-color:var(--warn);color:#311}
+  .seg.estado button[data-v=critico].sel{background:var(--crit);border-color:var(--crit);color:#300}
+
+  /* GPS */
+  .gps{display:flex;gap:10px;align-items:center}
+  .gps .coord{flex:1;font:13px/1.3 ui-monospace,monospace;color:var(--ink)}
+  .gps .coord small{color:var(--muted);display:block}
+  .btn-gps{flex:none;background:var(--agua);color:#04181b;border:none;border-radius:10px;
+    padding:12px 14px;font-weight:700;font-size:13px;cursor:pointer;display:flex;gap:6px;align-items:center}
+  .acc-ok{color:var(--ok)} .acc-bad{color:var(--warn)}
+
+  /* fotos */
+  .fotos{display:flex;gap:8px;flex-wrap:wrap}
+  .fotos img{width:68px;height:68px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+  .add-foto{width:68px;height:68px;border-radius:10px;border:1px dashed var(--agua);
+    background:var(--surface2);color:var(--agua);font-size:26px;display:flex;align-items:center;
+    justify-content:center;cursor:pointer}
+
+  /* lista */
+  .item{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--r);padding:12px;margin-bottom:10px;cursor:pointer}
+  .item .ico{width:40px;height:40px;border-radius:10px;flex:none;display:flex;align-items:center;
+    justify-content:center;font-size:18px;background:var(--surface2)}
+  .item .meta{flex:1;min-width:0}
+  .item .meta b{font-size:15px}
+  .item .meta span{display:block;font-size:12px;color:var(--muted);white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis}
+  .pill{font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;flex:none}
+  .pill.pend{background:rgba(245,166,35,.15);color:var(--amber)}
+  .pill.sync{background:rgba(62,207,142,.15);color:var(--ok)}
+  .empty{text-align:center;color:var(--muted);padding:48px 20px}
+  .empty .big{font-size:40px;margin-bottom:8px}
+
+  /* barra fixa de ação */
+  .actionbar{position:fixed;left:0;right:0;bottom:0;z-index:11;
+    padding:12px 12px calc(env(safe-area-inset-bottom) + 12px);
+    background:linear-gradient(to top,var(--bg) 70%,transparent);display:flex;gap:10px}
+  .btn{flex:1;border:none;border-radius:12px;padding:16px;font-size:16px;font-weight:700;cursor:pointer}
+  .btn.primary{background:var(--amber);color:var(--amber-ink)}
+  .btn.ghost{flex:none;background:var(--surface2);color:var(--ink);border:1px solid var(--line);padding:16px 18px}
+  .btn:disabled{opacity:.5}
+
+  /* config / sync */
+  .toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--surface2);
+    border:1px solid var(--line);color:var(--ink);padding:12px 18px;border-radius:12px;font-size:14px;
+    z-index:20;opacity:0;transition:.25s;pointer-events:none;max-width:90vw;text-align:center}
+  .toast.show{opacity:1}
+  .hidden{display:none!important}
+
+  /* ---- grupos (tela inicial de selecção de categoria) ---- */
+  .grupos-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 12px}
+  .grupo-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    padding:20px 12px;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;
+    transition:border-color .15s}
+  .grupo-card:active,.grupo-card:focus{background:var(--surface2);border-color:var(--agua);outline:none}
+  .grupo-card .icone{font-size:30px;margin-bottom:6px}
+  .grupo-card .label{font-size:13px;font-weight:700;color:var(--ink);line-height:1.3}
+  .grupo-card .qtd{font-size:11px;color:var(--muted);margin-top:4px}
+
+  /* breadcrumb no topo do form */
+  .form-breadcrumb{display:flex;align-items:center;gap:10px;padding:10px 12px 0;
+    font-size:13px;color:var(--muted)}
+  .form-breadcrumb button{background:none;border:none;color:var(--agua);font-size:13px;
+    font-weight:700;cursor:pointer;padding:0;display:flex;align-items:center;gap:4px}
+  .form-breadcrumb .sep{color:var(--line)}
+  .form-breadcrumb .atual{color:var(--ink);font-weight:600}
+
+  /* travessia */
+  .trav-id{font-family:ui-monospace,monospace;color:var(--agua);font-size:15px;font-weight:700}
+  .trav-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .btn-trav-fin{flex:none;background:var(--surface2);border:1px solid var(--crit);
+    color:var(--crit);border-radius:10px;padding:10px 14px;font-size:13px;font-weight:700;cursor:pointer}
+
+  /* vincular ativo anterior */
+  .vincular-lista{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+  .vincular-item{background:var(--surface2);border:1px solid var(--agua);border-radius:10px;
+    padding:10px 12px;cursor:pointer;font-size:14px;text-align:left;color:var(--ink);width:100%}
+  .vincular-item:active{opacity:.7}
+  .vincular-item b{display:block;margin-bottom:2px}
+  .vincular-item small{color:var(--muted)}
+
+  /* id rede + conectado */
+  .id-rede-val{font-family:ui-monospace,monospace;font-size:15px;color:var(--agua);padding:4px 0}
+  .conectado-val{font-size:13px;color:var(--muted);padding:2px 0}
+
+  /* landscape: compacta elementos sticky para não engolir a altura reduzida */
+  @media (orientation: landscape) {
+    header{padding-top:5px;padding-bottom:5px}
+    header h1 small{display:none}           /* suprime subtítulo — economiza ~16px */
+    nav.tabs{top:40px;padding-top:5px}
+    body{padding-bottom:72px}
+    .actionbar{padding:8px 12px calc(env(safe-area-inset-bottom) + 8px)}
+    .actionbar .btn{padding:12px}
+    .toast{bottom:72px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="mark"></div>
+  <h1>Inventário<small>Rodoviário de campo</small></h1>
+  <div class="net">
+    <span id="netTxt">offline</span><span class="dot" id="netDot"></span>
+    <span class="badge zero" id="pend">0</span>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="sel" data-tab="grupos" onclick="setTab('grupos')">Novo</button>
+  <button data-tab="lista" onclick="setTab('lista')">Coletados</button>
+</nav>
+
+<main>
+  <!-- ============ GRUPOS (home screen) ============ -->
+  <section id="tab-grupos">
+    <div class="grupos-grid" id="gruposGrid"></div>
+  </section>
+
+  <!-- ============ FORM ============ -->
+  <section id="tab-form" class="hidden">
+    <!-- breadcrumb: ← Grupos › Grupo actual -->
+    <div class="form-breadcrumb" id="formBreadcrumb">
+      <button type="button" onclick="setTab('grupos')">← Grupos</button>
+      <span class="sep">›</span>
+      <span class="atual" id="breadcrumbGrupo"></span>
+    </div>
+
+    <!-- banner de travessia ativa -->
+    <div class="card" id="cardTravInativo">
+      <button class="btn ghost" type="button" style="width:100%" onclick="iniciarTravessia()">▶ Iniciar Travessia</button>
+    </div>
+    <div class="card hidden" id="cardTravAtivo">
+      <div class="trav-row">
+        <div>
+          <label style="margin:0 0 2px">Travessia ativa</label>
+          <div class="trav-id" id="travessiaLabel">—</div>
+        </div>
+        <button class="btn-trav-fin" type="button" onclick="finalizarTravessia()">Finalizar ✕</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Dispositivo</h2>
+      <div class="field">
+        <label class="req">Tipo</label>
+        <select id="tipo" onchange="onTipo()"></select>
+      </div>
+      <div class="field hidden" id="wrapDirecaoColeta">
+        <label>Direção do Levantamento</label>
+        <select id="selDirecaoColeta">
+          <option value="Direta">A favor do fluxo (Direta)</option>
+          <option value="Reversa">Contra o fluxo (Reversa)</option>
+        </select>
+        <div class="hint">Indica se a canaleta foi coletada da entrada para a saída ou no sentido inverso.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Localização</h2>
+      <div class="field">
+        <label class="req">Rodovia</label>
+        <input id="rodovia" placeholder="SP-280" autocomplete="off">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label class="req" id="lblKmIni">km inicial</label>
+          <input id="km_ini" type="text" inputmode="numeric" placeholder="12+300" autocomplete="off">
+        </div>
+        <div class="field" id="wrapKmFim">
+          <label>km final</label>
+          <input id="km_fim" type="text" inputmode="numeric" placeholder="12+480" autocomplete="off">
+        </div>
+      </div>
+      <div class="field">
+        <label>Estaca (opcional)</label>
+        <input id="estaca" placeholder="1250 + 10" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Sentido</label>
+        <select id="selSentido">
+          <option value="Norte">Norte</option>
+          <option value="Sul">Sul</option>
+          <option value="Leste">Leste</option>
+          <option value="Oeste">Oeste</option>
+          <option value="Interna">Interna</option>
+          <option value="Externa">Externa</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Lado</label>
+        <select id="selLado">
+          <option value="Lado Direito">Lado Direito</option>
+          <option value="Lado Esquerdo">Lado Esquerdo</option>
+          <option value="Canteiro Lateral">Canteiro Lateral</option>
+          <option value="Canteiro Central">Canteiro Central</option>
+          <option value="Dispositivo">Dispositivo</option>
+          <option value="Alça">Alça</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label id="lblGps">Coordenada (entrada)</label>
+        <div class="gps">
+          <div class="coord" id="gps1"><small>sem captura</small>—</div>
+          <button class="btn-gps" type="button" onclick="capturaGps(1)">◎ GPS</button>
+        </div>
+      </div>
+      <div class="field hidden" id="wrapGps2">
+        <label>Coordenada (saída)</label>
+        <div class="gps">
+          <div class="coord" id="gps2"><small>sem captura</small>—</div>
+          <button class="btn-gps" type="button" onclick="capturaGps(2)">◎ GPS</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- atributos específicos do tipo (gerados pelo catálogo) -->
+    <div class="card" id="cardAtributos">
+      <h2 id="tituloAtributos">Especificações</h2>
+      <div id="atributos"></div>
+    </div>
+
+    <!-- conectividade hidráulica -->
+    <div class="card">
+      <h2>Conectividade Hidráulica</h2>
+      <div class="field">
+        <label>ID Rede</label>
+        <div class="id-rede-val" id="idRedeDisplay">—</div>
+      </div>
+      <div class="field">
+        <label>Conectado a (a montante)</label>
+        <div class="conectado-val" id="conectadoDisplay">não vinculado</div>
+      </div>
+      <button class="btn ghost" type="button" style="width:100%" onclick="vincularAnterior()">🔗 Ligar ao ativo anterior</button>
+      <div class="vincular-lista hidden" id="vincularLista"></div>
+    </div>
+
+    <div class="card">
+      <h2>Inspeção</h2>
+      <div class="field">
+        <label>Estado de conservação</label>
+        <div class="seg estado" id="segEstado"></div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Data</label>
+          <input id="data_inspecao" type="date">
+        </div>
+        <div class="field">
+          <label>Inspetor</label>
+          <input id="inspetor" autocomplete="off">
+        </div>
+      </div>
+      <div class="field">
+        <label>Observações</label>
+        <textarea id="observacoes" rows="2" placeholder="NCs, obstrução, erosão..."></textarea>
+      </div>
+      <div class="field">
+        <label>Fotos</label>
+        <div class="fotos" id="fotos">
+          <label class="add-foto">+
+            <input type="file" accept="image/*" capture="environment" class="hidden" onchange="addFoto(this)">
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LISTA ============ -->
+  <section id="tab-lista" class="hidden">
+    <div id="listaWrap"></div>
+  </section>
+</main>
+
+<div class="actionbar" id="barForm">
+  <button class="btn ghost" onclick="limparForm()" title="Limpar">↺</button>
+  <button class="btn primary" id="btnSalvar" onclick="salvar()">Salvar offline</button>
+</div>
+<div class="actionbar hidden" id="barLista">
+  <button class="btn ghost" onclick="exportGeoJSON()" title="Exportar GeoJSON">⬇</button>
+  <button class="btn primary" id="btnSync" onclick="sincronizar()">Sincronizar</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="catalogo.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

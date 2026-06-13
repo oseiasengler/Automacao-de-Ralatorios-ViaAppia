@@ -19,6 +19,7 @@ import uuid
 from fastapi import FastAPI, File, Form, HTTPException, Depends, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from sqlmodel import SQLModel, Session, create_engine, select
 
 from models import Dispositivo, DispositivoSync, SyncRequest, SyncResponse, agora
@@ -233,3 +234,10 @@ async def sincronizar_inventario(
 @app.get("/health")
 def health():
     return {"ok": True, "time": agora().isoformat()}
+
+
+# ---------------------------------------------------------------------------
+# ARQUIVOS ESTÁTICOS — montado por último para não interceptar rotas de API
+# html=True → serve index.html para qualquer path desconhecido (SPA fallback)
+# ---------------------------------------------------------------------------
+app.mount("/", StaticFiles(directory=".", html=True), name="static")

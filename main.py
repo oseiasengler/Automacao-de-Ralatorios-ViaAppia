@@ -18,7 +18,7 @@ import uuid
 
 from fastapi import FastAPI, File, Form, HTTPException, Depends, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from sqlmodel import SQLModel, Session, create_engine, select
 
@@ -234,6 +234,11 @@ async def sincronizar_inventario(
 @app.get("/health")
 def health():
     return {"ok": True, "time": agora().isoformat()}
+
+
+@app.get("/")
+def root_redirect():
+    return RedirectResponse(url="/inventario/", status_code=301)
 
 
 # ---------------------------------------------------------------------------

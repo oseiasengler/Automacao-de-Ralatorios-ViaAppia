@@ -240,4 +240,4 @@ def health():
 # ARQUIVOS ESTÁTICOS — montado por último para não interceptar rotas de API
 # html=True → serve index.html para qualquer path desconhecido (SPA fallback)
 # ---------------------------------------------------------------------------
-app.mount("/", StaticFiles(directory=".", html=True), name="static")
+app.mount("/inventario", StaticFiles(directory="frontend_inventario", html=True), name="inventario")

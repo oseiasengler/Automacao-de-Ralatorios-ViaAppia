@@ -1,0 +1,30 @@
+# Servidor Web e Framework
+fastapi
+uvicorn
+slowapi
+gunicorn
+python-multipart
+jinja2
+
+# Processamento Geoespacial e Dados
+pandas
+geopandas
+shapely
+fiona
+pyproj
+
+# Valida��o e Utilit�rios
+pydantic
+jsonschema
+python-dotenv
+o365
+psycopg[binary]
+sqlalchemy
+
+# Excel e PDF (NC / Meio Ambiente)
+openpyxl
+pymupdf
+pillow
+pdfplumber
+# M06 — Acumulado.xlsx → .ics (icalendar)
+icalendar

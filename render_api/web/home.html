@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="artesp-api-base" content="">
+  <title>Plataforma de Conservação e Obras — Início</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/web-static/bloco-padrao.css?v=10">
+  <style>
+    /* ── Design System v2 ── */
+    :root {
+      --bg-body: #050c15;
+      --bg-surface: rgba(10,20,38,.92);
+      --bg-surface-2: rgba(15,28,52,.8);
+      --bg-surface-3: rgba(20,34,60,.75);
+      --border-color: rgba(255,255,255,.08);
+      --border-glass: rgba(255,255,255,.07);
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --accent-glow: rgba(59,130,246,.2);
+      --accent-gradient: linear-gradient(135deg,#3b82f6 0%,#1d4ed8 100%);
+      --amber: #f59e0b;
+      --amber-glow: rgba(245,158,11,.18);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text: #e2e8f0;
+      --text-primary: #f0f4f8;
+      --text-secondary: #94a3b8;
+      --text-muted: #475569;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow-md: 0 8px 24px rgba(0,0,0,.45);
+      --shadow-lg: 0 20px 48px rgba(0,0,0,.5);
+      --font-ui: 'Outfit', system-ui, sans-serif;
+      --font-brand: 'Barlow Condensed','Outfit',sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body.home-page {
+      font-family: var(--font-ui);
+      background: var(--bg-body);
+      background-image:
+        radial-gradient(ellipse 900px 600px at 20% 10%, rgba(59,130,246,.06) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 400px at 85% 80%, rgba(245,158,11,.04) 0%, transparent 70%);
+      color: var(--text-primary);
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    /* ── Topbar ── */
+    .topbar.app-topbar.home-topbar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 24px;
+      height: 62px;
+      background: rgba(5,12,21,.97);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      box-shadow: 0 1px 0 rgba(59,130,246,.08);
+      backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .topbar-brand .icon {
+      font-size: 22px !important;
+      line-height: 1 !important;
+      filter: drop-shadow(0 0 8px rgba(245,158,11,.55));
+    }
+
+    .app-brand-text { display: flex; flex-direction: column; gap: 1px; }
+
+    .app-brand-title {
+      font-family: var(--font-brand);
+      font-size: 1rem !important;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      line-height: 1;
+      margin: 0;
+    }
+
+    .app-brand-sub {
+      font-size: .67rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+    .app-brand-platform { display: none; }
+
+    .topbar-sep {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,.1);
+      flex-shrink: 0;
+    }
+
+    .topbar-fill {
+      font-family: var(--font-brand);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      flex: 1;
+    }
+
+    .home-topbar .topbar-right {
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .topbar-user {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 4px 14px 4px 8px;
+      font-size: .78rem;
+      color: var(--text-secondary);
+    }
+
+    /* ── Home wrap ── */
+    .home-wrap {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 20px 0 0;
+      min-height: 0;
+      width: 100%;
+    }
+
+    .home-wrap > #homeLoginSection,
+    .home-wrap > #homeLoggedArea { width: 100%; max-width: 100%; align-self: stretch; }
+
+    #homeLoginSection {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
+      padding: 0 16px 32px;
+    }
+
+    #homeLoggedArea.home-logged-area {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    #homeLoggedArea.home-logged-area #homeAppsSection {
+      flex: 1 1 0;
+      min-height: 0;
+      overflow-y: auto;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── Hero ── */
+    .hero-section {
+      text-align: center;
+      margin-bottom: 36px;
+      padding-top: 12px;
+    }
+
+    .hero-title {
+      font-family: var(--font-brand);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero-title span { color: var(--accent-light); }
+
+    .hero-desc {
+      font-size: .88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ── App grid ── */
+    .grid-apps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto 32px;
+    }
+
+    .app-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius);
+      padding: 22px 22px 18px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(16px);
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1), border-color .3s, box-shadow .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.03) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .app-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 12px 32px rgba(0,0,0,.55);
+    }
+
+    .app-card.accent-blue:hover  { border-color: rgba(59,130,246,.45);  box-shadow: 0 10px 30px rgba(59,130,246,.2); }
+    .app-card.accent-green:hover { border-color: rgba(16,185,129,.45);  box-shadow: 0 10px 30px rgba(16,185,129,.2); }
+    .app-card.accent-red:hover   { border-color: rgba(239,68,68,.45);   box-shadow: 0 10px 30px rgba(239,68,68,.2); }
+
+    .app-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+    }
+
+    .icon-blue  { background: rgba(59,130,246,.15);  color: var(--accent-light); border: 1px solid rgba(59,130,246,.25); }
+    .icon-green { background: rgba(16,185,129,.15);  color: #34d399;             border: 1px solid rgba(16,185,129,.25); }
+    .icon-red   { background: rgba(239,68,68,.15);   color: #f87171;             border: 1px solid rgba(239,68,68,.25); }
+
+    .app-card h3 {
+      font-family: var(--font-brand);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin: 0 0 6px;
+    }
+
+    .app-card p {
+      font-size: .78rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      flex: 1;
+      margin-bottom: 14px;
+    }
+
+    .app-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      margin-top: auto;
+    }
+    .accent-green .app-card-link { color: #34d399; }
+    .accent-red   .app-card-link { color: #f87171; }
+
+    /* ── Login card ── */
+    .home-wrap .login-card {
+      background: var(--bg-surface);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      padding: 36px 32px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: var(--shadow-lg), 0 0 0 1px rgba(59,130,246,.1);
+      animation: slideUp .35s cubic-bezier(.34,1.56,.64,1);
+    }
+    @keyframes slideUp {
+      from { opacity:0; transform:translateY(20px) scale(.97); }
+      to   { opacity:1; transform:none; }
+    }
+
+    .home-wrap .login-card .logo { text-align:center; margin-bottom:28px; }
+    .home-wrap .login-card .logo .icon {
+      font-size: 40px;
+      display: block;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 16px rgba(245,158,11,.45));
+    }
+    .home-wrap .login-card .logo h2 {
+      font-family: var(--font-brand);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .home-wrap .login-card .logo p { font-size:.78rem; color:var(--text-muted); line-height:1.5; }
+    .login-brand-platform, .login-brand-sub { font-size:.72rem; color:var(--text-muted); }
+    .login-brand-platform { display:none; }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display:block; font-size:.74rem; font-weight:600; color:var(--text-secondary); margin-bottom:5px; }
+    .form-input {
+      width:100%; padding:10px 14px;
+      background:var(--bg-surface-2);
+      border:1px solid var(--border-color);
+      border-radius:var(--radius-sm);
+      color:var(--text-primary);
+      font-family:var(--font-ui);
+      font-size:.88rem;
+    }
+    .form-input:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(59,130,246,.15); }
+
+    .btn {
+      display:inline-flex; align-items:center; gap:7px;
+      padding:10px 20px; border-radius:9px;
+      font-family:var(--font-ui); font-size:.85rem; font-weight:600;
+      border:none; cursor:pointer; transition:all .2s;
+    }
+    .btn-primary {
+      background: var(--accent-gradient); color:#fff;
+      box-shadow: 0 3px 12px rgba(59,130,246,.35), inset 0 1px 0 rgba(255,255,255,.2);
+    }
+    .btn-primary:hover { filter:brightness(1.08); transform:translateY(-1px); }
+
+    .alert { padding:10px 14px; border-radius:8px; font-size:.82rem; margin-top:10px; }
+    .alert-danger { background:rgba(239,68,68,.1); color:#f87171; border:1px solid rgba(239,68,68,.25); }
+
+    .home-login-note { font-size:.74rem; color:var(--text-muted); margin-top:16px; text-align:center; }
+
+    /* ── Footer ── */
+    .app-footer {
+      padding: 16px 24px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      margin-top: auto;
+    }
+    .app-footer-inner {
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+      font-size:.7rem; color:var(--text-muted);
+    }
+    .app-footer-brand {
+      font-family:var(--font-brand); font-weight:700;
+      letter-spacing:.05em; text-transform:uppercase;
+      color:var(--text-secondary);
+    }
+    .app-footer-sep { opacity:.35; }
+    .app-footer-dev { color:var(--accent-light); }
+    .app-footer-tagline { opacity:.5; }
+
+    .animate-in { animation:fadeIn .4s ease-out; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+
+    @media (max-width:600px) {
+      .home-topbar.app-topbar { padding:0 14px; gap:10px; }
+      .topbar-fill { display:none; }
+      .topbar-sep  { display:none; }
+      .home-wrap { padding:14px 0 0; }
+      .container { padding:0 14px; }
+      .home-wrap .login-card { padding:28px 20px; }
+    }
+  </style>
+</head>
+<body class="home-page">
+
+  <header class="topbar app-topbar home-topbar">
+    <div class="topbar-brand">
+      <span class="icon" aria-hidden="true">🛣️</span>
+      <div class="app-brand-text">
+        <h1 class="app-brand-title">Plataforma de Conservação e Obras</h1>
+        <p class="app-brand-sub">GeoJSON · Fotos de Campo · NC ARTESP/ARTEMIG</p>
+      </div>
+    </div>
+    <div class="topbar-sep" aria-hidden="true"></div>
+    <div class="topbar-fill">Sistema de Automação de Relatórios</div>
+    <div class="topbar-right">
+      <div class="topbar-user" id="topbarUser" style="display:none">
+        <span>👤</span><strong id="topbarEmail"></strong>
+        <a href="#" id="topbarLogout" style="color:#5b9bd5;text-decoration:none;font-size:.72rem;margin-left:4px">[sair]</a>
+      </div>
+      <a href="/web/admin" style="color:var(--amber);font-size:.75rem;text-decoration:none;display:flex;align-items:center;gap:5px;font-family:var(--font-brand);font-weight:600;letter-spacing:.04em">
+        <i class="fas fa-cog" style="font-size:.65rem"></i> ADMIN
+      </a>
+    </div>
+  </header>
+
+  <div class="home-wrap">
+    <!-- Login -->
+    <div id="homeLoginSection" style="display:none">
+      <div class="login-card animate-in">
+        <div class="logo">
+          <div class="icon" aria-hidden="true">🛣️</div>
+          <h2>Plataforma de Conservação e Obras</h2>
+          <p class="login-brand-sub">Faça login para acessar GeoJSON, Fotos de Campo e NC.</p>
+        </div>
+        <form id="formLoginHome">
+          <div class="form-group">
+            <label><i class="fas fa-envelope" style="opacity:.6;margin-right:4px"></i> E-mail</label>
+            <input type="email" id="loginEmailHome" class="form-input" placeholder="usuario@empresa.com" required>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-lock" style="opacity:.6;margin-right:4px"></i> Senha</label>
+            <input type="password" id="loginSenhaHome" class="form-input" placeholder="Sua senha" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            <i class="fas fa-sign-in-alt"></i> Entrar
+          </button>
+          <div id="loginFeedbackHome"></div>
+        </form>
+        <p class="home-login-note"><i class="fas fa-info-circle" style="opacity:.5;margin-right:4px"></i>Um único login vale para as três aplicações.</p>
+      </div>
+    </div>
+
+    <!-- Área logada -->
+    <div id="homeLoggedArea" class="home-logged-area">
+      <div id="homeAppsSection">
+        <div class="container animate-in">
+
+          <div class="hero-section">
+            <h1 class="hero-title">Plataforma de<br><span>Engenharia Rodoviária</span></h1>
+            <p class="hero-desc">Automação inteligente de relatórios ARTESP e ARTEMIG — GeoJSON, processamento de fotos e pipeline de Não Conformidades.</p>
+          </div>
+
+          <div class="grid-apps">
+            <a href="/web/geojson" class="app-card accent-blue">
+              <div class="app-card-icon icon-blue">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <h3>GeoJSON ARTESP</h3>
+              <p>Gera relatórios geoespaciais a partir de Excel. Assinatura digital, validação e dashboard interativo por lote.</p>
+              <span class="app-card-link">Acessar módulo <i class="fas fa-arrow-right" style="font-size:.7rem"></i></span>
+            </a>
+
+            <a href="/web/fotos" class="app-card accent-green">
+              <div class="app-card-icon icon-green">
+                <i class="fas fa-camera"></i>
+              </div>
+              <h3>Fotos de Campo</h3>
+              <p>Organização por rodovia/km e renomeação automática de fotos para inclusão nos relatórios de conservação.</p>
+              <span class="app-card-link">Acessar módulo <i class="fas fa-arrow-right" style="font-size:.7rem"></i></span>
+            </a>
+
+            <a href="/web/nc" class="app-card accent-red">
+              <div class="app-card-icon icon-red">
+                <i class="fas fa-file-contract"></i>
+              </div>
+              <h3>NC ARTESP · NC ARTEMIG</h3>
+              <p>Pipeline completo de Não Conformidades — análise de PDF, extração, Kartado, Kria, Kcor e acumulado.</p>
+              <span class="app-card-link">Acessar módulo <i class="fas fa-arrow-right" style="font-size:.7rem"></i></span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="app-footer">
+      <div class="app-footer-inner">
+        <span class="app-footer-brand">Plataforma de Conservação e Obras</span>
+        <span class="app-footer-sep">·</span>
+        <span class="app-footer-dev">Desenvolvido por Ozeias Engler</span>
+        <span class="app-footer-tagline">Geração de relatórios georreferenciados e automação de relatórios internos</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/web-static/auth-primeiro-acesso.js"></script>
+  <script>
+    (function() {
+      var token = localStorage.getItem('artesp_token');
+      var userEmail = localStorage.getItem('artesp_user_email');
+      var loginSection = document.getElementById('homeLoginSection');
+      var appsSection = document.getElementById('homeAppsSection');
+      var loggedArea = document.getElementById('homeLoggedArea');
+      var topbarUser = document.getElementById('topbarUser');
+      var topbarEmail = document.getElementById('topbarEmail');
+
+      function showLoggedIn() {
+        if (loginSection) loginSection.style.display = 'none';
+        if (loggedArea) loggedArea.style.display = 'flex';
+        if (appsSection) appsSection.style.display = 'block';
+        if (topbarUser && userEmail) {
+          topbarUser.style.display = 'flex';
+          if (topbarEmail) topbarEmail.textContent = userEmail;
+        }
+      }
+      function showLoginForm() {
+        if (loginSection) loginSection.style.display = 'flex';
+        if (loggedArea) loggedArea.style.display = 'none';
+        if (appsSection) appsSection.style.display = 'block';
+        if (topbarUser) topbarUser.style.display = 'none';
+      }
+
+      if (token && userEmail) {
+        showLoggedIn();
+        if (window.ArtespTrocarSenha) ArtespTrocarSenha.check();
+      } else {
+        showLoginForm();
+      }
+
+      document.getElementById('formLoginHome').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        var email = document.getElementById('loginEmailHome').value.trim();
+        var senha = (document.getElementById('loginSenhaHome').value || '').trim();
+        var fb = document.getElementById('loginFeedbackHome');
+        fb.innerHTML = '';
+        if (!email || !senha) {
+          fb.innerHTML = '<div class="alert alert-danger">Preencha e-mail e senha.</div>';
+          return;
+        }
+        try {
+          var r = await fetch('/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, senha: senha }),
+            credentials: 'include'
+          });
+          var data = await r.json().catch(function() { return {}; });
+          if (!r.ok) {
+            var msg = typeof data.detail === 'string' ? data.detail : (Array.isArray(data.detail) && data.detail[0] && data.detail[0].msg) || 'Credenciais inválidas.';
+            fb.innerHTML = '<div class="alert alert-danger">' + msg + '</div>';
+            return;
+          }
+          var tok = data.access_token || data.token;
+          if (!tok) {
+            fb.innerHTML = '<div class="alert alert-danger">Servidor não retornou token.</div>';
+            return;
+          }
+          localStorage.setItem('artesp_token', tok);
+          localStorage.setItem('artesp_user_email', data.email || email);
+          userEmail = data.email || email;
+          showLoggedIn();
+          if (data.must_change_password && window.ArtespTrocarSenha) ArtespTrocarSenha.show();
+        } catch (err) {
+          fb.innerHTML = '<div class="alert alert-danger">Falha na conexão. Verifique se o servidor está rodando.</div>';
+        }
+      });
+
+      document.getElementById('topbarLogout')?.addEventListener('click', async function(e) {
+        e.preventDefault();
+        await fetch('/auth/logout', { method: 'POST', credentials: 'include' });
+        localStorage.removeItem('artesp_token');
+        localStorage.removeItem('artesp_user_email');
+        token = null;
+        userEmail = null;
+        showLoginForm();
+      });
+    })();
+  </script>
+</body>
+</html>

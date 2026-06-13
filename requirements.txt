@@ -1,7 +1,50 @@
-fastapi>=0.110
-uvicorn[standard]>=0.27
-sqlmodel>=0.0.16
-python-multipart>=0.0.9
-aiofiles>=23.0
-# Postgres (produção): descomente
-# psycopg2-binary>=2.9
+# ── Servidor Web e Framework ────────────────────────────────────────────────
+fastapi
+uvicorn
+slowapi
+gunicorn
+python-multipart
+jinja2
+
+# ── Processamento Geoespacial e Dados ───────────────────────────────────────
+pandas
+geopandas
+shapely
+fiona
+pyproj
+
+# ── Validação e Utilitários ──────────────────────────────────────────────────
+pydantic
+jsonschema
+python-dotenv
+PyJWT
+o365
+psycopg[binary]
+sqlalchemy
+sqlmodel
+aiofiles
+
+# ── Excel e datas ────────────────────────────────────────────────────────────
+openpyxl
+xlrd
+python-dateutil
+# iCalendar (.ics) — M06 / Acumulado.xlsx → eventos.ics
+icalendar
+
+# ── Geração de PDF (relatório de auditoria) ──────────────────────────────────
+reportlab
+
+# ── Módulo Fotos de Campo ─────────────────────────────────────────────────────
+# Processamento de imagens + extração de GPS do EXIF
+pillow
+piexif
+# Extração de imagens de PDF de NC Constatação Artesp
+pymupdf
+# Extração de texto de PDF (alternativa para MA)
+pdfplumber
+# OCR para PDFs escaneados (opcional): pip install pytesseract + instalar Tesseract no sistema
+# pytesseract
+
+# ── Testes ────────────────────────────────────────────────────────────────────
+pytest>=7.0
+httpx

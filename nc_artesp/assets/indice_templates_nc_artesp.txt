@@ -1,0 +1,627 @@
+Índice de templates NC ARTESP
+Origem: C:/GeradorARTESP/nc_artesp/assets/templates
+Gerado em: 2026-05-12 20:19
+Total de ficheiros: 264
+
+========================================================================
+LISTA ALFABÉTICA (nome completo com extensão)
+========================================================================
+   1  _Itens sem Padrão - A serem realocados.xlsx
+   2  _Modelo Vazio_histórico.xlsx
+   3  _Planilha Modelo Kcor-Kria.XLSX
+   4  Abertura de evento.XLSX
+   5  Acumulado.XLSX
+   6  Check List.xlsx
+   7  Correção - Marco Quilométrico.xlsx
+   8  CTA - Alambrado - Danificado.xlsx
+   9  CTA - Alambrado - Implantação.xlsx
+  10  CTA - Alambrado - Remoção.xlsx
+  11  CTA - Cerca - Danificada.xlsx
+  12  CTA - Cerca - Implantação.xlsx
+  13  CTA - Cerca - Remoção.xlsx
+  14  CTA - Tela Antiofuscante - Danificada.xlsx
+  15  CTA - Tela Antiofuscante - Implantação.xlsx
+  16  CTA - Tela Antiofuscante - Limpeza_Pintura.xlsx
+  17  CTA - Tela Fauna - Danificada.xlsx
+  18  CTA - Tela Fauna - Implantação.xlsx
+  19  CTA - Tela Fauna - Limpeza_Pintura.xlsx
+  20  DA - Balizadores Lateral Pista - Danificados.xlsx
+  21  DA - Balizadores Lateral Pista - Implantação.xlsx
+  22  DA - Balizadores Lateral Pista - Limpeza.xlsx
+  23  DA - Cones - Ausencia.xlsx
+  24  DA - Cones - Danificados.xlsx
+  25  DA - Delineadores Barreira - Danificados.xlsx
+  26  DA - Delineadores Barreira - Limpeza.xlsx
+  27  DA - Delineadores Defensa - Danificados.xlsx
+  28  DA - Delineadores Defensa - Limpeza.xlsx
+  29  DC - Barreira Rígida - Danificada.xlsx
+  30  DC - Barreira Rígida - Implantação.xlsx
+  31  DC - Barreira Rígida - Limpeza.xlsx
+  32  DC - Barreira Rígida - Remoção.xlsx
+  33  DC - Defensa Metálica_Terminais - Danificada.xlsx
+  34  DC - Defensa Metálica_Terminais - Implantação.xlsx
+  35  DC - Defensa Metálica_Terminais - Limpeza.xlsx
+  36  DC - Defensa Metálica_Terminais - Remoção.xlsx
+  37  Dren. - Caixas - Limpeza.xlsx
+  38  Dren. - Caixas - Reparo.xlsx
+  39  Dren. - Drenos - Limpeza.xlsx
+  40  Dren. - Drenos - Reparo.xlsx
+  41  Dren. - Grelha_Tampa Caixa - Reparo.xlsx
+  42  Dren. - Linha de Tubo - Limpeza.xlsx
+  43  Dren. - Linha de Tubo - Reparo.xlsx
+  44  Dren. - Montante_Jusante - Limpeza.xlsx
+  45  Dren. - Outras Anomalias.xlsx
+  46  Dren. - Superficial - Deficiência.xlsx
+  47  Dren. - Superficial - Limpeza.xlsx
+  48  Dren. - Superficial - Reparo.xlsx
+  49  Exportar.xlsx
+  50  FD - Animais Mortos - Remoção.xlsx
+  51  FD - Call Box - Guarda Corpo Danificado.xlsx
+  52  FD - Call Box - Guarda Corpo Limpeza_Pintura.xlsx
+  53  FD - Call Box - Limpeza Passeio.xlsx
+  54  FD - Call Box - Limpeza Totem.xlsx
+  55  FD - Call Box - Outros.xlsx
+  56  FD - Cargas - Limpeza.xlsx
+  57  FD - Conformação Lateral.xlsx
+  58  FD - Conformação Talude.xlsx
+  59  FD - Controle Fitossanitário.xlsx
+  60  FD - Deslizamento Talude.xlsx
+  61  FD - Despraguejamento (Prédio_Pátio).xlsx
+  62  FD - Empoçamento - Conformação.xlsx
+  63  FD - Erosão.xlsx
+  64  FD - Lixo_Entulho.xlsx
+  65  FD - Monumentos - Limpeza_Pintura.xlsx
+  66  FD - Monumentos - Reparo.xlsx
+  67  FD - Parada ônibus - Limpeza_Pintura.xlsx
+  68  FD - Parada ônibus - Reparo.xlsx
+  69  FD - Passeio - Limpeza.xlsx
+  70  FD - Passeio - Reparo.xlsx
+  71  FD - Pichação.xlsx
+  72  FD - Prédio e Pátio.xlsx
+  73  FD - Utilidades Públicas - Limpeza_Reparo.xlsx
+  74  Inspeção - Aceiros.xlsx
+  75  Inspeção - Acessos Rodoviários.xlsx
+  76  Inspeção - Alambrado.xlsx
+  77  Inspeção - Balança.xlsx
+  78  Inspeção - Balizadores.xlsx
+  79  Inspeção - Barreira Rígida.xlsx
+  80  Inspeção - Base Operacional.xlsx
+  81  Inspeção - Base PMRV.xlsx
+  82  Inspeção - Base SAU.xlsx
+  83  Inspeção - Call Box.xlsx
+  84  Inspeção - Canteiros Gramado.xlsx
+  85  Inspeção - CCO (Centro de Controle Operacional).xlsx
+  86  Inspeção - Cerca.xlsx
+  87  Inspeção - CFTV.xlsx
+  88  Inspeção - Defensas Metálica.xlsx
+  89  Inspeção - Drenagem Drenos.xlsx
+  90  Inspeção - Drenagem Escadas Hidraulica Rápidos.xlsx
+  91  Inspeção - Drenagem Profunda Caixas_Alas.xlsx
+  92  Inspeção - Drenagem Profunda Tubulação_Aduelas.xlsx
+  93  Inspeção - Drenagem Superficial.xlsx
+  94  Inspeção - Especial - OAE.xlsx
+  95  Inspeção - Estação Metereológica.xlsx
+  96  Inspeção - Inicial - OAE.xlsx
+  97  Inspeção - Monumentos.xlsx
+  98  Inspeção - Passeios.xlsx
+  99  Inspeção - Pesagem.xlsx
+ 100  Inspeção - PGF.xlsx
+ 101  Inspeção - PMV.xlsx
+ 102  Inspeção - Ponto Onibus.xlsx
+ 103  Inspeção - Praça de Pedágio.xlsx
+ 104  Inspeção - Radar.xlsx
+ 105  Inspeção - Refilamento.xlsx
+ 106  Inspeção - Rotineira - OAE.xlsx
+ 107  Inspeção - SAT.xlsx
+ 108  Inspeção - Semi-Pórticos Pórticos Braço.xlsx
+ 109  Inspeção - Sinalização Horizontal - Longitudinal.xlsx
+ 110  Inspeção - Sinalização Horizontal - Marcos Viárias.xlsx
+ 111  Inspeção - Sinalização Horizontal - Zebrados.xlsx
+ 112  Inspeção - Sinalização Vertical.xlsx
+ 113  Inspeção - Tachas.xlsx
+ 114  Inspeção - Terminais.xlsx
+ 115  Inspeção - Transição.xlsx
+ 116  Inspeção - Árvores.xlsx
+ 117  Inv. - Aceiros.xlsx
+ 118  Inv. - Acessos Rodoviários.xlsx
+ 119  Inv. - Alambrado.xlsx
+ 120  Inv. - Balança.xlsx
+ 121  Inv. - Balizadores.xlsx
+ 122  Inv. - Barreiras de Concreto.xlsx
+ 123  Inv. - Base Operacional.xlsx
+ 124  Inv. - Base PMRV.xlsx
+ 125  Inv. - Base SAU (Serviço de Atendimento ao Usuário).xlsx
+ 126  Inv. - Call Box.xlsx
+ 127  Inv. - Canteiros Gramados.xlsx
+ 128  Inv. - CCO (Centro de Controle Operacional).xlsx
+ 129  Inv. - Cerca.xlsx
+ 130  Inv. - Defensas Metálicas.xlsx
+ 131  Inv. - Drenagem - Drenos.xlsx
+ 132  Inv. - Drenagem - Escadas Hidraulica Rápidos.xlsx
+ 133  Inv. - Drenagem Profunda - Caixas_Alas.xlsx
+ 134  Inv. - Drenagem Profunda - Tubulação_Aduelas.xlsx
+ 135  Inv. - Drenagem Superficial.xlsx
+ 136  Inv. - Estação Meteorologia.xlsx
+ 137  Inv. - GALERIA.xlsx
+ 138  Inv. - Medidor de Velocidade (Radar).xlsx
+ 139  Inv. - Monumentos.xlsx
+ 140  Inv. - PASSAGEM DE GADO.xlsx
+ 141  Inv. - PASSAGEM INFERIOR.xlsx
+ 142  Inv. - PASSAGEM SUPERIOR.xlsx
+ 143  Inv. - PASSARELA.xlsx
+ 144  Inv. - Passeios.xlsx
+ 145  Inv. - PGF (Posto Geral de Fiscalização).xlsx
+ 146  Inv. - PMV.xlsx
+ 147  Inv. - PONTE.xlsx
+ 148  Inv. - Pontos de ônibus.xlsx
+ 149  Inv. - Pontos Homologados de Fiscalização.xlsx
+ 150  Inv. - Posto Combustível.xlsx
+ 151  Inv. - Posto de Pesagem.xlsx
+ 152  Inv. - Praça de Pedágio.xlsx
+ 153  Inv. - Pátio de Apreensão de Animais.xlsx
+ 154  Inv. - Refilamento.xlsx
+ 155  Inv. - SAT (Sensor de Automático de Tráfego).xlsx
+ 156  Inv. - SCFTV ( Sistema de Circuito Fechado de Televisão).xlsx
+ 157  Inv. - Semi-Pórticos Pórticos Braço.xlsx
+ 158  Inv. - Sinalização Horizontal - Marcas Viárias.xlsx
+ 159  Inv. - Sinalização Horizontal - Zebrados.xlsx
+ 160  Inv. - Sinalização Horizontal_Tacha - Longitudinal.xlsx
+ 161  Inv. - Sinalização Vertical.xlsx
+ 162  Inv. - Terminais.xlsx
+ 163  Inv. - Transição.xlsx
+ 164  Inv. - Veículos Operacionais.xlsx
+ 165  Inv. - VIADUTO.xlsx
+ 166  Inv. - Árvores.xlsx
+ 167  Modelo - Controle NC´s V3.xlsx
+ 168  Modelo Abertura Evento Kria Conserva Rotina.xlsx
+ 169  Modelo.xlsx
+ 170  OAE - Estrutura - Danos.xlsx
+ 171  OAE - Guarda corpos e Balaústres - Danificado.xlsx
+ 172  OAE - Guarda corpos e Balaústres - Limpeza_Pintura.xlsx
+ 173  OAE - Junta de Dilatação.xlsx
+ 174  OAE - Limpeza.xlsx
+ 175  OAE - Passeio - Danificado.xlsx
+ 176  OAE - Passeio - Limpeza.xlsx
+ 177  OAE -Telamento  - Danificado.xlsx
+ 178  Pav. - Degrau.xlsx
+ 179  Pav. - Depressão encontro OAE.xlsx
+ 180  Pav. - Depressão ou Recalque.xlsx
+ 181  Pav. - Limpeza.xlsx
+ 182  Pav. - Outras Anomalias.xlsx
+ 183  Pav. - Panela_Buraco.xlsx
+ 184  Pav. - Reparo com recorte.xlsx
+ 185  Pav. - Reparo de Bordos e Lajes.xlsx
+ 186  Pav. - Substituição de Pano de Rolamento.xlsx
+ 187  Pav. - Trincas.xlsx
+ 188  Pav. Rigido - Depressão encontro OAE.xlsx
+ 189  Pav. Rigido - Limpeza e resselagem de Juntas e Trincas.xlsx
+ 190  Pav. Rigido - Limpeza.xlsx
+ 191  Pav. Rigido - Outras Anomalias.xlsx
+ 192  Pav. Rigido - Panela_Buraco.xlsx
+ 193  Pav. Rigido - Reparo com recorte.xlsx
+ 194  Pav. Rigido - Reparo de Bordos e Lajes.xlsx
+ 195  Pav. Rigido - Trincas.xlsx
+ 196  Planilha Modelo - Relat. Fotog. - VBA Rot.xlsx
+ 197  Planilha Modelo - Retigrafico Horizontal Artesp - old.xlsx
+ 198  Planilha Modelo - Retigrafico Horizontal Artesp.xlsm
+ 199  Planilha Modelo Conservação - Foto 2 Lados.xlsx
+ 200  Planilha Modelo Sinalizacao.xlsx
+ 201  PM - a.1.3 - Pav. Flexível - Trincas.xlsx
+ 202  PM - a.2.1 - Pav. Rígido - Trincas.xlsx
+ 203  PM - b.1.1 - Rev. Vegetal - Poda mecanizada.xlsx
+ 204  PM - b.1.2 - Rev. Vegetal - Poda manual.xlsx
+ 205  PM - b.1.4 - Rev. Vegetal - Despraguejamento.xlsx
+ 206  PM - b.1.6 - Rev. Vegetal - Capina.xlsx
+ 207  PM - b.1.8 - Rev. Vegetal - Manutenção de aceiros.xlsx
+ 208  PM - b.1.9 - Rev. Vegetal - Manutenção de árvores e arbustos.xlsx
+ 209  PM - b.3.3 - Limp. Manual - Bueiros, galerias e drenos.xlsx
+ 210  PM - b.3.4 - Limp. Manual - Canteiro central pavimentado.xlsx
+ 211  PM - b.3.5 - Limp. Manual - Canais e Corta-Rios.xlsx
+ 212  PM - b.4.1 - Lixo e Entulho - Lixo_entulho.xlsx
+ 213  PM - b.5.1 - Limp. Mecânica - Varredura de pistas, acostamentos e refúgios.xlsx
+ 214  PM - b.5.3 - Limp. Mecânica - Canais e corta-rios.xlsx
+ 215  PM - b.5.4 - Limp. Mecânica - Bueiros, galerias e drenos.xlsx
+ 216  PM - b.7.1 - Parada de Onibus - Limpeza.xlsx
+ 217  PM - b.7.2 - Parada de Onibus - Reparo.xlsx
+ 218  PM - b.8.1 - Manumento - Limpeza.xlsx
+ 219  PM - b.9.1 - Utilidades Públicas - Limpeza.xlsx
+ 220  PM - c.1.1 - Dren. Superficial Plataforma - Limpeza.xlsx
+ 221  PM - c.2.1.a - Dren. Superficial Fora Plataforma - Limpeza - Para o sistema em geral.xlsx
+ 222  PM - c.3.1 - Dren. Profunda - Limpeza.xlsx
+ 223  PM - e.2.1 - Sin. Vertical - Placas - Limpeza.xlsx
+ 224  PM - e.3.1 - Sin. Aérea - Pórticos e Bandeiras - Limpeza_Pintura.xlsx
+ 225  SH - Pintura de Solo - Conflitante_Tinta Preta.xlsx
+ 226  SH - Pintura de Solo - Implantação.xlsx
+ 227  SH - Pintura de Solo - Limpeza.xlsx
+ 228  SH - Pintura de Solo - Outros.xlsx
+ 229  SH - Pintura de Solo - Revitalização.xlsx
+ 230  SH - Tachas  - Danificadas.xlsx
+ 231  SH - Tachas - Limpeza.xlsx
+ 232  SH - Tachas - Outros.xlsx
+ 233  SV - Placas (Demais Placas) - Ausência_Implantação.xlsx
+ 234  SV - Placas (Demais Placas) - Danificada_Troca.xlsx
+ 235  SV - Placas (Demais Placas) - Limpeza.xlsx
+ 236  SV - Placas (Demais Placas) - Manutenção.xlsx
+ 237  SV - Placas (Demais Placas) - Pontalete.xlsx
+ 238  SV - Placas (Demais Placas) - Relocação.xlsx
+ 239  SV - Placas (Demais Placas) - Remoção.xlsx
+ 240  SV - Placas (Demais Placas) - Vandalismo.xlsx
+ 241  SV - Placas (Reg._Adv.) - Ausência_Implantação.xlsx
+ 242  SV - Placas (Reg._Adv.) - Danificada_Troca.xlsx
+ 243  SV - Placas (Reg._Adv.) - Limpeza.xlsx
+ 244  SV - Placas (Reg._Adv.) - Manutenção.xlsx
+ 245  SV - Placas (Reg._Adv.) - Pontalete.xlsx
+ 246  SV - Placas (Reg._Adv.) - Relocação.xlsx
+ 247  SV - Placas (Reg._Adv.) - Remoção.xlsx
+ 248  SV - Placas (Reg._Adv.) - Vandalismo.xlsx
+ 249  SV - Pórtico_Semipórtico - Danificado.xlsx
+ 250  SV - Pórtico_Semipórtico - Manutenção.xlsx
+ 251  Template - Geral - 4 e 5 - Final.xlsx
+ 252  Template - geral.xlsx
+ 253  Template_EAF.xlsx
+ 254  VD - Vegetação - Aceiro.xlsx
+ 255  VD - Vegetação - Capina Vegetação.xlsx
+ 256  VD - Vegetação - Despraguejamento (Colonião).xlsx
+ 257  VD - Vegetação - Poda do Revestimento Vegetal.xlsx
+ 258  VD - Vegetação - Recuperação do Revestimento (Plantio).xlsx
+ 259  VD - Vegetação - Refilamento.xlsx
+ 260  VD - Vegetação - Remoção de Massa Seca.xlsx
+ 261  VD - Árvores e Arbustos - Manutenção_Poda Galhos.xlsx
+ 262  VD - Árvores e Arbustos - Remoção de Galhos.xlsx
+ 263  VD - Árvores e Arbustos - Supressão DAP Maior que 5.xlsx
+ 264  VD - Árvores e Arbustos - Supressão DAP Menor que 5.xlsx
+
+========================================================================
+POR PREFIXO (texto antes do primeiro « - » no nome base)
+========================================================================
+
+[_Itens sem Padrão] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * _Itens sem Padrão - A serem realocados.xlsx
+
+[_Modelo] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * _Modelo Vazio_histórico.xlsx
+
+[_Planilha] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * _Planilha Modelo Kcor-Kria.XLSX
+
+[Abertura] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * Abertura de evento.XLSX
+
+[Acumulado] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * Acumulado.XLSX
+
+[Check] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * Check List.xlsx
+
+[Correção] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * Correção - Marco Quilométrico.xlsx
+
+[CTA] — 12 ficheiro(s)
+------------------------------------------------------------------------
+  * CTA - Alambrado - Danificado.xlsx
+  * CTA - Alambrado - Implantação.xlsx
+  * CTA - Alambrado - Remoção.xlsx
+  * CTA - Cerca - Danificada.xlsx
+  * CTA - Cerca - Implantação.xlsx
+  * CTA - Cerca - Remoção.xlsx
+  * CTA - Tela Antiofuscante - Danificada.xlsx
+  * CTA - Tela Antiofuscante - Implantação.xlsx
+  * CTA - Tela Antiofuscante - Limpeza_Pintura.xlsx
+  * CTA - Tela Fauna - Danificada.xlsx
+  * CTA - Tela Fauna - Implantação.xlsx
+  * CTA - Tela Fauna - Limpeza_Pintura.xlsx
+
+[DA] — 9 ficheiro(s)
+------------------------------------------------------------------------
+  * DA - Balizadores Lateral Pista - Danificados.xlsx
+  * DA - Balizadores Lateral Pista - Implantação.xlsx
+  * DA - Balizadores Lateral Pista - Limpeza.xlsx
+  * DA - Cones - Ausencia.xlsx
+  * DA - Cones - Danificados.xlsx
+  * DA - Delineadores Barreira - Danificados.xlsx
+  * DA - Delineadores Barreira - Limpeza.xlsx
+  * DA - Delineadores Defensa - Danificados.xlsx
+  * DA - Delineadores Defensa - Limpeza.xlsx
+
+[DC] — 8 ficheiro(s)
+------------------------------------------------------------------------
+  * DC - Barreira Rígida - Danificada.xlsx
+  * DC - Barreira Rígida - Implantação.xlsx
+  * DC - Barreira Rígida - Limpeza.xlsx
+  * DC - Barreira Rígida - Remoção.xlsx
+  * DC - Defensa Metálica_Terminais - Danificada.xlsx
+  * DC - Defensa Metálica_Terminais - Implantação.xlsx
+  * DC - Defensa Metálica_Terminais - Limpeza.xlsx
+  * DC - Defensa Metálica_Terminais - Remoção.xlsx
+
+[Dren.] — 12 ficheiro(s)
+------------------------------------------------------------------------
+  * Dren. - Caixas - Limpeza.xlsx
+  * Dren. - Caixas - Reparo.xlsx
+  * Dren. - Drenos - Limpeza.xlsx
+  * Dren. - Drenos - Reparo.xlsx
+  * Dren. - Grelha_Tampa Caixa - Reparo.xlsx
+  * Dren. - Linha de Tubo - Limpeza.xlsx
+  * Dren. - Linha de Tubo - Reparo.xlsx
+  * Dren. - Montante_Jusante - Limpeza.xlsx
+  * Dren. - Outras Anomalias.xlsx
+  * Dren. - Superficial - Deficiência.xlsx
+  * Dren. - Superficial - Limpeza.xlsx
+  * Dren. - Superficial - Reparo.xlsx
+
+[Exportar] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * Exportar.xlsx
+
+[FD] — 24 ficheiro(s)
+------------------------------------------------------------------------
+  * FD - Animais Mortos - Remoção.xlsx
+  * FD - Call Box - Guarda Corpo Danificado.xlsx
+  * FD - Call Box - Guarda Corpo Limpeza_Pintura.xlsx
+  * FD - Call Box - Limpeza Passeio.xlsx
+  * FD - Call Box - Limpeza Totem.xlsx
+  * FD - Call Box - Outros.xlsx
+  * FD - Cargas - Limpeza.xlsx
+  * FD - Conformação Lateral.xlsx
+  * FD - Conformação Talude.xlsx
+  * FD - Controle Fitossanitário.xlsx
+  * FD - Deslizamento Talude.xlsx
+  * FD - Despraguejamento (Prédio_Pátio).xlsx
+  * FD - Empoçamento - Conformação.xlsx
+  * FD - Erosão.xlsx
+  * FD - Lixo_Entulho.xlsx
+  * FD - Monumentos - Limpeza_Pintura.xlsx
+  * FD - Monumentos - Reparo.xlsx
+  * FD - Parada ônibus - Limpeza_Pintura.xlsx
+  * FD - Parada ônibus - Reparo.xlsx
+  * FD - Passeio - Limpeza.xlsx
+  * FD - Passeio - Reparo.xlsx
+  * FD - Pichação.xlsx
+  * FD - Prédio e Pátio.xlsx
+  * FD - Utilidades Públicas - Limpeza_Reparo.xlsx
+
+[Inspeção] — 43 ficheiro(s)
+------------------------------------------------------------------------
+  * Inspeção - Aceiros.xlsx
+  * Inspeção - Acessos Rodoviários.xlsx
+  * Inspeção - Alambrado.xlsx
+  * Inspeção - Balança.xlsx
+  * Inspeção - Balizadores.xlsx
+  * Inspeção - Barreira Rígida.xlsx
+  * Inspeção - Base Operacional.xlsx
+  * Inspeção - Base PMRV.xlsx
+  * Inspeção - Base SAU.xlsx
+  * Inspeção - Call Box.xlsx
+  * Inspeção - Canteiros Gramado.xlsx
+  * Inspeção - CCO (Centro de Controle Operacional).xlsx
+  * Inspeção - Cerca.xlsx
+  * Inspeção - CFTV.xlsx
+  * Inspeção - Defensas Metálica.xlsx
+  * Inspeção - Drenagem Drenos.xlsx
+  * Inspeção - Drenagem Escadas Hidraulica Rápidos.xlsx
+  * Inspeção - Drenagem Profunda Caixas_Alas.xlsx
+  * Inspeção - Drenagem Profunda Tubulação_Aduelas.xlsx
+  * Inspeção - Drenagem Superficial.xlsx
+  * Inspeção - Especial - OAE.xlsx
+  * Inspeção - Estação Metereológica.xlsx
+  * Inspeção - Inicial - OAE.xlsx
+  * Inspeção - Monumentos.xlsx
+  * Inspeção - Passeios.xlsx
+  * Inspeção - Pesagem.xlsx
+  * Inspeção - PGF.xlsx
+  * Inspeção - PMV.xlsx
+  * Inspeção - Ponto Onibus.xlsx
+  * Inspeção - Praça de Pedágio.xlsx
+  * Inspeção - Radar.xlsx
+  * Inspeção - Refilamento.xlsx
+  * Inspeção - Rotineira - OAE.xlsx
+  * Inspeção - SAT.xlsx
+  * Inspeção - Semi-Pórticos Pórticos Braço.xlsx
+  * Inspeção - Sinalização Horizontal - Longitudinal.xlsx
+  * Inspeção - Sinalização Horizontal - Marcos Viárias.xlsx
+  * Inspeção - Sinalização Horizontal - Zebrados.xlsx
+  * Inspeção - Sinalização Vertical.xlsx
+  * Inspeção - Tachas.xlsx
+  * Inspeção - Terminais.xlsx
+  * Inspeção - Transição.xlsx
+  * Inspeção - Árvores.xlsx
+
+[Inv.] — 50 ficheiro(s)
+------------------------------------------------------------------------
+  * Inv. - Aceiros.xlsx
+  * Inv. - Acessos Rodoviários.xlsx
+  * Inv. - Alambrado.xlsx
+  * Inv. - Balança.xlsx
+  * Inv. - Balizadores.xlsx
+  * Inv. - Barreiras de Concreto.xlsx
+  * Inv. - Base Operacional.xlsx
+  * Inv. - Base PMRV.xlsx
+  * Inv. - Base SAU (Serviço de Atendimento ao Usuário).xlsx
+  * Inv. - Call Box.xlsx
+  * Inv. - Canteiros Gramados.xlsx
+  * Inv. - CCO (Centro de Controle Operacional).xlsx
+  * Inv. - Cerca.xlsx
+  * Inv. - Defensas Metálicas.xlsx
+  * Inv. - Drenagem - Drenos.xlsx
+  * Inv. - Drenagem - Escadas Hidraulica Rápidos.xlsx
+  * Inv. - Drenagem Profunda - Caixas_Alas.xlsx
+  * Inv. - Drenagem Profunda - Tubulação_Aduelas.xlsx
+  * Inv. - Drenagem Superficial.xlsx
+  * Inv. - Estação Meteorologia.xlsx
+  * Inv. - GALERIA.xlsx
+  * Inv. - Medidor de Velocidade (Radar).xlsx
+  * Inv. - Monumentos.xlsx
+  * Inv. - PASSAGEM DE GADO.xlsx
+  * Inv. - PASSAGEM INFERIOR.xlsx
+  * Inv. - PASSAGEM SUPERIOR.xlsx
+  * Inv. - PASSARELA.xlsx
+  * Inv. - Passeios.xlsx
+  * Inv. - PGF (Posto Geral de Fiscalização).xlsx
+  * Inv. - PMV.xlsx
+  * Inv. - PONTE.xlsx
+  * Inv. - Pontos de ônibus.xlsx
+  * Inv. - Pontos Homologados de Fiscalização.xlsx
+  * Inv. - Posto Combustível.xlsx
+  * Inv. - Posto de Pesagem.xlsx
+  * Inv. - Praça de Pedágio.xlsx
+  * Inv. - Pátio de Apreensão de Animais.xlsx
+  * Inv. - Refilamento.xlsx
+  * Inv. - SAT (Sensor de Automático de Tráfego).xlsx
+  * Inv. - SCFTV ( Sistema de Circuito Fechado de Televisão).xlsx
+  * Inv. - Semi-Pórticos Pórticos Braço.xlsx
+  * Inv. - Sinalização Horizontal - Marcas Viárias.xlsx
+  * Inv. - Sinalização Horizontal - Zebrados.xlsx
+  * Inv. - Sinalização Horizontal_Tacha - Longitudinal.xlsx
+  * Inv. - Sinalização Vertical.xlsx
+  * Inv. - Terminais.xlsx
+  * Inv. - Transição.xlsx
+  * Inv. - Veículos Operacionais.xlsx
+  * Inv. - VIADUTO.xlsx
+  * Inv. - Árvores.xlsx
+
+[Modelo] — 3 ficheiro(s)
+------------------------------------------------------------------------
+  * Modelo - Controle NC´s V3.xlsx
+  * Modelo Abertura Evento Kria Conserva Rotina.xlsx
+  * Modelo.xlsx
+
+[OAE] — 7 ficheiro(s)
+------------------------------------------------------------------------
+  * OAE - Estrutura - Danos.xlsx
+  * OAE - Guarda corpos e Balaústres - Danificado.xlsx
+  * OAE - Guarda corpos e Balaústres - Limpeza_Pintura.xlsx
+  * OAE - Junta de Dilatação.xlsx
+  * OAE - Limpeza.xlsx
+  * OAE - Passeio - Danificado.xlsx
+  * OAE - Passeio - Limpeza.xlsx
+
+[OAE -Telamento] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * OAE -Telamento  - Danificado.xlsx
+
+[Pav.] — 10 ficheiro(s)
+------------------------------------------------------------------------
+  * Pav. - Degrau.xlsx
+  * Pav. - Depressão encontro OAE.xlsx
+  * Pav. - Depressão ou Recalque.xlsx
+  * Pav. - Limpeza.xlsx
+  * Pav. - Outras Anomalias.xlsx
+  * Pav. - Panela_Buraco.xlsx
+  * Pav. - Reparo com recorte.xlsx
+  * Pav. - Reparo de Bordos e Lajes.xlsx
+  * Pav. - Substituição de Pano de Rolamento.xlsx
+  * Pav. - Trincas.xlsx
+
+[Pav. Rigido] — 8 ficheiro(s)
+------------------------------------------------------------------------
+  * Pav. Rigido - Depressão encontro OAE.xlsx
+  * Pav. Rigido - Limpeza e resselagem de Juntas e Trincas.xlsx
+  * Pav. Rigido - Limpeza.xlsx
+  * Pav. Rigido - Outras Anomalias.xlsx
+  * Pav. Rigido - Panela_Buraco.xlsx
+  * Pav. Rigido - Reparo com recorte.xlsx
+  * Pav. Rigido - Reparo de Bordos e Lajes.xlsx
+  * Pav. Rigido - Trincas.xlsx
+
+[Planilha] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * Planilha Modelo Sinalizacao.xlsx
+
+[Planilha Modelo] — 3 ficheiro(s)
+------------------------------------------------------------------------
+  * Planilha Modelo - Relat. Fotog. - VBA Rot.xlsx
+  * Planilha Modelo - Retigrafico Horizontal Artesp - old.xlsx
+  * Planilha Modelo - Retigrafico Horizontal Artesp.xlsm
+
+[Planilha Modelo Conservação] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * Planilha Modelo Conservação - Foto 2 Lados.xlsx
+
+[PM] — 24 ficheiro(s)
+------------------------------------------------------------------------
+  * PM - a.1.3 - Pav. Flexível - Trincas.xlsx
+  * PM - a.2.1 - Pav. Rígido - Trincas.xlsx
+  * PM - b.1.1 - Rev. Vegetal - Poda mecanizada.xlsx
+  * PM - b.1.2 - Rev. Vegetal - Poda manual.xlsx
+  * PM - b.1.4 - Rev. Vegetal - Despraguejamento.xlsx
+  * PM - b.1.6 - Rev. Vegetal - Capina.xlsx
+  * PM - b.1.8 - Rev. Vegetal - Manutenção de aceiros.xlsx
+  * PM - b.1.9 - Rev. Vegetal - Manutenção de árvores e arbustos.xlsx
+  * PM - b.3.3 - Limp. Manual - Bueiros, galerias e drenos.xlsx
+  * PM - b.3.4 - Limp. Manual - Canteiro central pavimentado.xlsx
+  * PM - b.3.5 - Limp. Manual - Canais e Corta-Rios.xlsx
+  * PM - b.4.1 - Lixo e Entulho - Lixo_entulho.xlsx
+  * PM - b.5.1 - Limp. Mecânica - Varredura de pistas, acostamentos e refúgios.xlsx
+  * PM - b.5.3 - Limp. Mecânica - Canais e corta-rios.xlsx
+  * PM - b.5.4 - Limp. Mecânica - Bueiros, galerias e drenos.xlsx
+  * PM - b.7.1 - Parada de Onibus - Limpeza.xlsx
+  * PM - b.7.2 - Parada de Onibus - Reparo.xlsx
+  * PM - b.8.1 - Manumento - Limpeza.xlsx
+  * PM - b.9.1 - Utilidades Públicas - Limpeza.xlsx
+  * PM - c.1.1 - Dren. Superficial Plataforma - Limpeza.xlsx
+  * PM - c.2.1.a - Dren. Superficial Fora Plataforma - Limpeza - Para o sistema em geral.xlsx
+  * PM - c.3.1 - Dren. Profunda - Limpeza.xlsx
+  * PM - e.2.1 - Sin. Vertical - Placas - Limpeza.xlsx
+  * PM - e.3.1 - Sin. Aérea - Pórticos e Bandeiras - Limpeza_Pintura.xlsx
+
+[SH] — 8 ficheiro(s)
+------------------------------------------------------------------------
+  * SH - Pintura de Solo - Conflitante_Tinta Preta.xlsx
+  * SH - Pintura de Solo - Implantação.xlsx
+  * SH - Pintura de Solo - Limpeza.xlsx
+  * SH - Pintura de Solo - Outros.xlsx
+  * SH - Pintura de Solo - Revitalização.xlsx
+  * SH - Tachas  - Danificadas.xlsx
+  * SH - Tachas - Limpeza.xlsx
+  * SH - Tachas - Outros.xlsx
+
+[SV] — 18 ficheiro(s)
+------------------------------------------------------------------------
+  * SV - Placas (Demais Placas) - Ausência_Implantação.xlsx
+  * SV - Placas (Demais Placas) - Danificada_Troca.xlsx
+  * SV - Placas (Demais Placas) - Limpeza.xlsx
+  * SV - Placas (Demais Placas) - Manutenção.xlsx
+  * SV - Placas (Demais Placas) - Pontalete.xlsx
+  * SV - Placas (Demais Placas) - Relocação.xlsx
+  * SV - Placas (Demais Placas) - Remoção.xlsx
+  * SV - Placas (Demais Placas) - Vandalismo.xlsx
+  * SV - Placas (Reg._Adv.) - Ausência_Implantação.xlsx
+  * SV - Placas (Reg._Adv.) - Danificada_Troca.xlsx
+  * SV - Placas (Reg._Adv.) - Limpeza.xlsx
+  * SV - Placas (Reg._Adv.) - Manutenção.xlsx
+  * SV - Placas (Reg._Adv.) - Pontalete.xlsx
+  * SV - Placas (Reg._Adv.) - Relocação.xlsx
+  * SV - Placas (Reg._Adv.) - Remoção.xlsx
+  * SV - Placas (Reg._Adv.) - Vandalismo.xlsx
+  * SV - Pórtico_Semipórtico - Danificado.xlsx
+  * SV - Pórtico_Semipórtico - Manutenção.xlsx
+
+[Template] — 2 ficheiro(s)
+------------------------------------------------------------------------
+  * Template - Geral - 4 e 5 - Final.xlsx
+  * Template - geral.xlsx
+
+[Template_EAF] — 1 ficheiro(s)
+------------------------------------------------------------------------
+  * Template_EAF.xlsx
+
+[VD] — 11 ficheiro(s)
+------------------------------------------------------------------------
+  * VD - Vegetação - Aceiro.xlsx
+  * VD - Vegetação - Capina Vegetação.xlsx
+  * VD - Vegetação - Despraguejamento (Colonião).xlsx
+  * VD - Vegetação - Poda do Revestimento Vegetal.xlsx
+  * VD - Vegetação - Recuperação do Revestimento (Plantio).xlsx
+  * VD - Vegetação - Refilamento.xlsx
+  * VD - Vegetação - Remoção de Massa Seca.xlsx
+  * VD - Árvores e Arbustos - Manutenção_Poda Galhos.xlsx
+  * VD - Árvores e Arbustos - Remoção de Galhos.xlsx
+  * VD - Árvores e Arbustos - Supressão DAP Maior que 5.xlsx
+  * VD - Árvores e Arbustos - Supressão DAP Menor que 5.xlsx

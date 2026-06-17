@@ -1,0 +1,25 @@
+---
+description: LEI — novos fluxos não alteram fluxos existentes que já funcionam
+alwaysApply: true
+---
+
+# Isolamento de fluxos
+
+**Obrigatório:** ao implantar um **novo** fluxo (rota API, macro NC, extração PDF, Kartado, e-mail, etc.), **não alterar** o comportamento dos fluxos **já em produção** salvo pedido explícito de migração.
+
+## Como cumprir
+
+- **Entrada dedicada:** novo parâmetro (query/form) com default que preserva o antigo, nova rota, ou módulo/ficheiro separado — nunca mudar o default do caminho antigo para “encaixar” o novo.
+- **Código partilhado:** funções usadas por vários fluxos (`pdf_extractor`, `nc_router`, `extrair_fotos_pdf`, helpers comuns) — alterações **aditivas** (novo ramo, novo argumento opcional `False`/`None`) ou extrair função nova; evitar reescrever o caminho único usado por todos.
+- **Testes:** regressão para o fluxo antigo (`pytest` ou manual explícito) sempre que tocar em código partilhado.
+- **Contrato de entrega:** se o utilizador definir **onde** e **como** devolver (pastas distintas, nomes, formato), cumprir **à letra**. Não reorganizar por iniciativa, não fundir saídas de fluxos diferentes nem substituir por um atalho «mais fácil para gerar» que ignore o pedido.
+- **Zero improviso:** nada de suposições nem atalhos não pedidos; alteração = requisito claro + implementação alinhada + validação (teste automatizado ou critério explícito acordado).
+- **Git — repor ao último commit/remoto só com autorização:** **proibido** correr `git checkout`, `git restore`, `git reset` ou equivalente que sobrescreva ficheiros com `HEAD` / `origin` **sem** (1) avisar explicitamente que **alterações não commitadas podem perder-se** e listar os paths afectados, e (2) o utilizador **confirmar** que pode prosseguir. «Reverter» um erro da IA = alteração **cirúrgica** (hunks / ficheiros mínimos), **não** reset em massa, salvo o utilizador pedir explicitamente repor o repo inteiro a um commit.
+
+## Nomes parecidos, produtos diferentes (NC / ARTESP)
+
+**Kartado Consolidado** (M01 fundido, consumo Kartado), **Consolidado** (constatações / EAF ou outro consolidado de rotina) e **Exportar** (planilha rotina conservação, outro layout e outro software interno) **não são o mesmo ficheiro nem o mesmo fluxo**. Não reutilizar parser, mapa de colunas nem heurística de nomes entre eles: palavras partilhadas («constatações», «consolidado») **não** justificam cruzar código — os **dados invertem-se ou corrompem-se**.
+
+## Resumo
+
+Novo fluxo = **caminho opt-in** + fluxos antigos **inalterados por omissão** + **não confundir** Kartado Consolidado / Consolidado / Exportar + **nunca** `git checkout`/`restore` ao commit remoto **sem** aviso e **sim** explícito do utilizador.

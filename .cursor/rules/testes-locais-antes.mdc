@@ -1,0 +1,25 @@
+---
+description: LEI — toda alteração passa por testes locais antes de commit / dar por concluído
+alwaysApply: true
+---
+
+# Testes locais antes de commit
+
+**Obrigatório:** após mudanças em código, **correr testes locais** e só então commitar ou encerrar a tarefa. Não assumir que “está certo” sem executar.
+
+## Comando padrão (raiz do repo)
+
+```bash
+python -m pytest
+```
+
+Ou: `test_local.bat` (Windows).
+
+## Escopo
+
+- **`pytest`** cobre `render_api/tests/`. Sempre que tocar em `render_api` ou dependências partilhadas, **pytest tem de passar**.
+- Áreas **fora** da suite (ex.: fluxos NC/Artemig sem teste automatizado): antes de concluir, o agente deve **indicar** o teste manual feito ou a correr (script/rota), ou propor comando; não fechar só com “alteração feita”.
+
+## Resumo
+
+Alteração → **teste local** → commit. Sem exceção por hábito.

@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.egg-info/
+.eggs/
+venv/
+.mypy_cache/
+.ruff_cache/
+
+# Ambiente e credenciais (Segurança!)
+.env
+.env.local
+.env.*
+client_secret*.json
+*.pfx
+*.pfx.password
+ARTESP_PFX
+ARTESP_PFX_PASSWORD
+
+# Build e Executáveis
+dist/
+build/
+*.spec
+GeradorARTESP.exe
+.pyarmor/
+
+# IDE e editor — versionar regras Cursor em .cursor/rules/; resto do .cursor/ fica local
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+.vscode/
+.idea/
+
+# Office / Excel — bloqueios e temporários (nunca versionar)
+~$*
+*.xlk
+*.tmp
+*.temp
+
+# Windows / macOS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+.DS_Store
+
+# Artefactos locais que não pertencem ao repo
+**/*PERSONAL.XLSB
+**/gerar-arvore-de-arquivos-e-diretorios-no-excel.xlsm
+nc_artemig/Arquivos/
+render_api/web/*.code-workspace
+
+# Pastas temporárias de comparação / debug local
+_tmp_*/
+
+# Pontos de restauro / DB local de desenvolvimento
+restore_points/
+local_test.db
+
+# Dados, Logs e Saídas
+*.log
+temp/
+outputs/
+data/
+users.json
+Backup/
+_backup_pre_unificacao/
+acumulado.xlsx
+Imagens/
+PHOTO-*.jpg
+_test_*.geojson

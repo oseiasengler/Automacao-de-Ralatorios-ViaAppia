@@ -1,0 +1,41 @@
+---
+description: Multi-máquinas — Git, Settings Sync, venv, rclone e regras Cursor partilhadas
+alwaysApply: true
+---
+
+# Sincronização entre máquinas (Cursor / GeradorARTESP)
+
+## 1. Extensões e definições do editor (built-in)
+
+O Cursor baseia-se no VS Code. Para as mesmas extensões, atalhos e `settings.json` em todas as máquinas: **Settings Sync** — ícone de engrenagem (canto inferior esquerdo) → **Turn on Settings Sync…** → login **GitHub** ou **Microsoft**. Inclui extensões, keybindings, definições e snippets.
+
+## 2. Código e integridade — Git
+
+Para o código do **GeradorARTESP**, o **Git** (remoto GitHub/GitLab/etc.) é a fonte da verdade entre máquinas: **commit + push** na máquina A; **pull** na máquina B.
+
+`drive-sync-exclude.txt` (rclone / checklist) exclui `.git/`, `.vscode/`, caches e `venv/` da cópia para nuvem — evita corrupção de índice e ficheiros bloqueados quando há backup em paralelo.
+
+## 3. Ambiente Python (`venv`)
+
+**Não** sincronizar `venv/` entre máquinas. Manter `requirements.txt` (e `render_api/requirements.txt` quando aplicável) atualizado. Em cada máquina:
+
+```powershell
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+`backup_gdrive.bat` + `drive-sync-exclude.txt` evitam subir pastas pesadas para o Drive.
+
+## 4. Regras da IA no Cursor
+
+Preferir **`.cursor/rules/*.mdc`** (como este ficheiro) e **`AGENTS.md`** na raiz — versionados no Git. O ficheiro raiz **`.cursorrules`** é legado; se existir, pode coexistir, mas o padrão do projeto são as regras em `.cursor/rules/`.
+
+## 5. Resumo
+
+| Objetivo | Ferramenta |
+|----------|------------|
+| Código e regras de projeto | Git |
+| Extensões e atalhos do IDE | Settings Sync (GitHub / Microsoft) |
+| Cópia de segurança / cópia larga de ficheiros | rclone + Google Drive + `drive-sync-exclude.txt` |
+| Bibliotecas Python | `pip` local por máquina (`venv`) |

@@ -1,21 +1,27 @@
-__pycache__/
+# Git e VCS
+.git
+.gitignore
+
+# Python (cache e ambiente)
+__pycache__
 *.pyc
-*.pyo
-*.pyd
-.pytest_cache/
+.pytest_cache
+venv/
+.eggs/
+*.egg-info
 
-# banco local de desenvolvimento
-coleta.db
-drenagem.db
+# Ambiente e segredos
+.env
+.env.*
 
-# saídas geradas localmente
-Output_Kartado/
-2026-*/
-2025-*/
-
-# backups e rascunhos
+# Dados, logs e backup (não sobem no image)
+*.log
 Backup/
+_backup_pre_unificacao/
+data/
+outputs/
+temp/
 
-# arquivos do sistema
-.DS_Store
-Thumbs.db
+# Dev/exemplo (não necessários no deploy)
+exemplo_*.py
+nc_artesp/verificar_*.py

@@ -1,0 +1,31 @@
+---
+description: LEI — comentários só profissionais e necessários (sempre); evita retrabalho de limpeza
+alwaysApply: true
+---
+
+# Comentários no código — lei do projeto
+
+**Padrão obrigatório:** comentários e docstrings **apenas** onde agregam valor real. Comentário óbvio ou repetitivo **não entra** — depois alguém (ou a IA) perde tempo a remover.
+
+## Postura ao escrever código
+
+- **Default:** não comentar. Só acrescentar se cair num dos itens abaixo.
+- **Docstrings:** uma linha quando bastar; evitar parágrafos que repetem o nome da função.
+- **Após implementar:** não deixar “para explicar ao leitor iniciante”; o leitor lê o código.
+
+## O que COMENTAR (única exceção permitida)
+
+- **Porquê, não como** (decisão não óbvia).
+- **Regras de negócio** (ex.: ARTESP, datas DD/MM/YYYY).
+- **Workarounds** (bug de lib, limitação).
+- **Contrato de API / função crítica:** entrada, saída, erros — **objetivo**.
+
+## O que NÃO comentar
+
+- Sintaxe ou fluxo que o código já mostra.
+- “Inicializa…”, “retorna…”, notas genéricas.
+- Duplicar OpenAPI/summary quando a rota já está documentada no framework.
+
+## Resumo
+
+Código limpo = profissional. Excesso de comentários = retrabalho. **Esta regra tem prioridade sobre o hábito de “explicar tudo”.**

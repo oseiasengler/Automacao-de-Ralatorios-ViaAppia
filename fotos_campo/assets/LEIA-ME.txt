@@ -1,0 +1,17 @@
+Relação Total de coordenadas (Rodovia, km, Sentido, Lat, Lon)
+
+Cada módulo tem seu próprio assets. Este é o assets do módulo fotos_campo.
+
+A subpasta assets/Template/ (planilhas modelo de fotos de campo) é versionada no repositório
+(Git LFS para .xlsx), para funcionar em deploy (ex.: Render) sem cópia manual.
+
+Coloque aqui os arquivos XLSX ou CSV com os nomes exatos:
+
+  - Relação Total - Lote 13.xlsx
+  - Relação Total - Lote 21.xlsx
+  - Relação Total - Lote 26.xlsx
+
+Ou, para o Lote 26, pode ser CSV com o mesmo nome base:
+  - Relação Total - Lote 26.csv  (separador ;  colunas: Rodovia;Km;Sentido;Latitude;Longitude)
+
+Estrutura esperada: coluna A=Rodovia, B=km, C=Sentido, D=Latitude, E=Longitude.

@@ -1,0 +1,35 @@
+# Orientação para agentes e contribuidores
+
+Antes de alterar código: **perceber o contexto** — chamadores, módulos ligados, regras em `.cursor/rules/` e o que `pytest` já cobre. O editor ajuda a navegar e editar; a decisão do que mudar fica mais segura com essa leitura. Quando o pedido fixar **onde** e **como** devolver (pastas, formato), implementar **isso** — sem improvisar estrutura de saída nem misturar fluxos.
+
+**Zero improviso:** em programação não há lugar para mudanças ao acaso ou atalhos não pedidos — critério explícito (especificação, contrato de API, ou o combinado no pedido) e **verificação** (`pytest` ou teste manual acordado) antes de fechar a tarefa.
+
+## Git: nunca repor ao último commit sem autorização
+
+Comandos que **substituem** ficheiros pelo `HEAD` ou pelo remoto (`git checkout`, `git restore`, `git reset`, etc.) **apagam alterações não commitadas** nesses paths. O agente **não** os executa **sem** avisar desse risco, listar os ficheiros afectados e **obter confirmação explícita** do utilizador. Pedido de «reverter» = corrigir o mínimo necessário (diff cirúrgico), salvo pedido claro em contrário.
+
+Detalhe: `.cursor/rules/fluxos-isolados.mdc` (bullet **Git — repor ao último commit/remoto só com autorização**).
+
+## Lei do projeto: comentários
+
+**Comentários e docstrings só quando forem profissionais e estritamente necessários** (porquê de negócio, workaround, contrato de API). Não documentar “o que o código já diz”. Evitar blocos longos — isso vira retrabalho para enxugar depois.
+
+Detalhe: `.cursor/rules/comentarios-codigo-limpo.mdc` (`alwaysApply: true`).
+
+## Lei do projeto: testes locais primeiro
+
+Toda alteração **passa por testes locais** antes de commit ou de dar a tarefa por fechada. Na raiz: `python -m pytest` ou `test_local.bat`. O que não estiver na suite pytest deve ser validado manualmente e isso deve ficar explícito.
+
+Detalhe: `.cursor/rules/testes-locais-antes.mdc` (`alwaysApply: true`).
+
+## Lei do projeto: novos fluxos não quebram os antigos
+
+Cada **novo** fluxo deve ser **isolado** (rota/parâmetro default/módulo próprio). Não alterar rotas, assinaturas ou comportamento por omissão de fluxos que **já funcionam**; código partilhado (`pdf_extractor`, extração PDF, router) prefere extensão **opt-in** e testes de regressão. **Kartado Consolidado**, **Consolidado** (EAF/outro) e **Exportar** são entregas **distintas** (consumidores internos diferentes): não misturar leitores nem assumir que o Excel «é parecido».
+
+Detalhe: `.cursor/rules/fluxos-isolados.mdc` (`alwaysApply: true`).
+
+## Multi-máquinas: Git, IDE e backup
+
+Entre computadores: **código e regras** via **Git** (push/pull); **extensões e definições** do Cursor/VS Code via **Settings Sync** (conta GitHub ou Microsoft); **cópia para Google Drive** com `rclone` / `backup_gdrive.bat` e exclusões em `drive-sync-exclude.txt` (não substituir o Git). Em cada máquina, criar **`venv`** local e `pip install -r requirements.txt` — nunca sincronizar a pasta `venv/`.
+
+Detalhe: `.cursor/rules/maquinas-sync.mdc` (`alwaysApply: true`).

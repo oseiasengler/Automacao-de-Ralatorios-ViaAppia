@@ -25,6 +25,7 @@
       overflow: hidden;
       padding: 6px 20px 14px;
       gap: 8px;
+      max-width: none;
     }
     .nc-skin #nc-page .step-tabs {
       padding: 5px;
@@ -61,6 +62,20 @@
       .nc-skin #nc-page {
         padding: 6px 12px 12px;
       }
+      /* Mobile: scroll horizontal nas abas para não ocupar 2 linhas e reduzir o painel. */
+      .nc-skin #nc-page .step-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .nc-skin #nc-page .step-tabs::-webkit-scrollbar { display: none; }
+      .nc-skin #nc-page .step-tabs .step-tab,
+      .nc-skin #nc-page .step-tabs .nc-step-tab-lote {
+        flex: 0 0 auto;
+        min-width: 72px;
+        max-width: 110px;
+      }
     }
     /* Lote obrigatório: inputs PDF (Análise, Sinalização SP, Artemig MG) desativam sem lote adequado; zonas NC usam .nc-anexo-sem-lote. */
     .upload-zone.nc-anexo-sem-lote {
@@ -71,10 +86,10 @@
       cursor: not-allowed;
     }
 
-    /* 11 células iguais, uma única linha — evita página alta e barras por causa das abas. */
+    /* Layout fluido: flex-wrap adapta as abas a qualquer largura de monitor. */
     .step-tabs {
-      display: grid;
-      grid-template-columns: repeat(11, minmax(0, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 5px;
       align-items: stretch;
       width: 100%;
@@ -86,9 +101,9 @@
       padding: 6px;
     }
     .step-tab {
-      min-width: 0;
-      width: 100%;
-      max-width: 100%;
+      flex: 1 1 90px;
+      min-width: 76px;
+      max-width: none;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -182,9 +197,9 @@
       font-size: 0.58rem;
     }
     .nc-step-tab-lote {
-      min-width: 0;
-      width: 100%;
-      max-width: 100%;
+      flex: 1 1 90px;
+      min-width: 76px;
+      max-width: none;
       display: flex;
       flex-direction: column;
       align-items: stretch;
@@ -473,7 +488,7 @@
       <button type="button" class="step-tab" data-step="separar-artemig" style="border-color:rgba(52,211,153,.35)">
         <span class="step-num" style="font-size:.55rem;width:auto;min-width:18px;padding:0 4px;border-radius:6px">50</span>
         <span class="step-tab-label"><i class="fas fa-file-pdf"></i> Separa NC ARTEMIG</span>
-        <span class="step-tab-regime">Nascentes (MG)</span>
+        <span class="step-tab-regime">ARTEMIG (MG)</span>
       </button>
       <button type="button" class="step-tab step-tab-disabled" disabled data-step="criar-email" aria-disabled="true" title="Em breve Novo Módulo">
         <span class="step-num">✉</span>
